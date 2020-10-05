@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class TitleAuthorSearchStrategy {
+    private String query;
+    private ArrayList<String> words = new ArrayList();
+
+    public TitleAuthorSearchStrategy(String query){
+        // TODO
+        // Split the query into an arraylist of words. 
+        this.query = query;
+    }
+
+    public boolean matchesBook(Book book){
+        // Return true if all words are found in either title or author
+        // Example if query="Stephen Shining"
+        // This would match:
+        // The Shining by Stephen King
+        // This would not match:
+        // The History of Time by Stephen Hawking
+        // Because Shining is not in the second example, we can only find Stephen but we can't find Shining
+
+        return false;
+    }
+
+}
