@@ -1,17 +1,18 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Arrays;
-
+/**
+ * Book represents a book object in real life. it has isbn, title, author(s) and
+ * price
+ * 
+ */
 public class Book {
 
     private String isbn;
     private String title;
-    private ArrayList<String> authors;
+    private String authors;
     private double price;
 
-    public Book(String isbn, String title, ArrayList<String> authors, double price) {
+    public Book(String isbn, String title, String authors, double price) {
         this.isbn = isbn;
         this.title = title;
         this.price = price;
@@ -32,21 +33,8 @@ public class Book {
         return this.price;
     }
 
-    public ArrayList<String> getAuthors() {
+    public String getAuthors() {
         return this.authors;
-    }
-
-    public String getAuthorsAsString() {
-        Iterator<String> iter = getAuthors().iterator();
-        String authorsStr = "";
-        while (iter.hasNext()) {
-            authorsStr = authorsStr + iter.next() + ", ";
-        }
-        authorsStr = authorsStr.trim();
-        if (authorsStr != null && authorsStr.length() > 0 && authorsStr.charAt(authorsStr.length() - 1) == ',') {
-            authorsStr = authorsStr.substring(0, authorsStr.length() - 1);
-        }
-        return authorsStr;
     }
 
     // Setters
@@ -62,22 +50,22 @@ public class Book {
         this.price = price;
     }
 
-    public void setAuthors(ArrayList<String> authors) {
+    public void setAuthors(String authors) {
         this.authors = authors;
     }
 
-    public void setAuthors(String authors) {
-        String[] authorsArr = authors.split(",");
-        for (int i = 0; i < authorsArr.length; i++) {
-            authorsArr[i] = authorsArr[i].trim();
-        }
-        this.authors = new ArrayList<String>(Arrays.asList(authorsArr));
-    }
-
+    /**
+     * hashCode is used internally by HashMap set If two objects are equal according
+     * to the equals() method, then calling the hashCode method on each of the two
+     * objects must produce the same integer result.
+     */
     public int hashCode() {
         return this.isbn.hashCode();
     }
 
+    /**
+     * Each book has unique ISBN
+     */
     public boolean equals(Object o) {
         if (o instanceof Book) {
             Book book = (Book) o;

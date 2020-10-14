@@ -9,7 +9,7 @@ public class UpdateBookAuthorsScreen {
         Common.showDivider();
         System.out.println("Update authors for " + book.getTitle());
         Common.showDivider();
-        System.out.println("Current Authors: " + book.getAuthorsAsString());
+        System.out.println("Current Authors: " + book.getAuthors());
         return TextInput.prompt("Press [Enter] to leave unchanged");
     }
 

@@ -2,6 +2,9 @@ package ui.screen;
 
 import model.Book;
 
+/**
+ * Common has functions that are used by many screen objects
+ */
 public class Common {
     public static void showLine(String message) {
         System.out.println(message);
@@ -25,7 +28,7 @@ public class Common {
         Common.showLine("ISBN: " + book.getIsbn());
         Common.showLine("Title: " + book.getTitle());
         Common.showLine("Quantity: " + Integer.toString(quantity));
-        Common.showLine("Author(s): " + book.getAuthorsAsString());
+        Common.showLine("Author(s): " + book.getAuthors());
         Common.showLine("Price: " + Double.toString(book.getPrice()));
         Common.showGap();
     }

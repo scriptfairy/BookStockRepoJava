@@ -1,4 +1,0 @@
-public interface SearchStrategy {
-    
-    public boolean matchesBook(Book book);
-}

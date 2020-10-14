@@ -10,6 +10,9 @@ import model.BookStockModel;
 import model.BookBrowser;
 import model.Book;
 
+/**
+ * Controller is Singleton to controll the application It knows about the model
+ */
 public class Controller {
     private BookStockModel model;
 
@@ -20,7 +23,6 @@ public class Controller {
     private void showAddBookScreen() {
         AddBookForm form = AddBookScreen.showForm();
         model.addBook(form.getBook(), form.getQuantity());
-        // TODO go to update book screen.
         showHome();
     }
 
@@ -49,10 +51,28 @@ public class Controller {
             return;
         }
 
+        if (selected.getKey() == BrowseBooksScreen.COMMAND_DEL) {
+            showDeleteBookScreen();
+            return;
+        }
+
         if (selected.getKey() == BrowseBooksScreen.COMMAND_RETURN) {
             showHome();
             return;
         }
+        showHome();
+    }
+
+    private void showDeleteBookScreen() {
+        BookBrowser bookBrowser = this.model.getBookBrowser();
+        Book book = bookBrowser.getCurrentBook();
+        MenuItem selected = DeleteBookScreen.show(book);
+        if (selected.getKey() == DeleteBookScreen.COMMAND_DEL) {
+            this.model.deleteBook(book);
+            bookBrowser.deleteBook(book);
+            this.showBookBrowseScreen();
+        }
+        return;
     }
 
     private void showUpdateBookScreen() {
@@ -83,26 +103,39 @@ public class Controller {
             this.showUpdateBookPriceScreen();
             return;
         }
-
+        this.model.saveInventory();
+        showHome();
     }
 
     private void showUpdateBookPriceScreen() {
         Book book = this.model.getBookBrowser().getCurrentBook();
+        double price = 0;
         String newPrice = UpdateBookPriceScreen.show(book);
-        try {
-            double price = Double.parseDouble(newPrice);
-        } catch (NumberFormatException ex) {
-            Common.showLine("ERROR: Invalid price");
-            showUpdateBookPriceScreen();
+        if (newPrice.trim().length() == 0) {
+            this.showUpdateBookScreen();
+            return;
         }
 
+        try {
+            price = Double.parseDouble(newPrice);
+        } catch (NumberFormatException ex) {
+            Common.showLine("ERROR: Invalid price. Enter valid number.");
+            showUpdateBookPriceScreen();
+        }
+        book.setPrice(price);
+        this.showUpdateBookScreen();
     }
 
     private void showUpdateBookQuantityScreen() {
         Book book = this.model.getBookBrowser().getCurrentBook();
         int quantity = this.model.getBookBrowser().getCurrentBookQuantity();
         String newQuantity = UpdateBookQuantityScreen.show(book, quantity);
+        if (newQuantity.trim().length() == 0) {
+            this.showUpdateBookScreen();
+            return;
+        }
         try {
+
             quantity = Integer.parseInt(newQuantity);
         } catch (NumberFormatException ex) {
 
@@ -124,9 +157,11 @@ public class Controller {
 
     private void showUpdateBookIsbnScreen() {
         Book book = this.model.getBookBrowser().getCurrentBook();
+        int quantity = this.model.getBookBrowser().getCurrentBookQuantity();
         String isbn = UpdateBookIsbnScreen.show(book);
         if (isbn.length() > 0) {
             book.setIsbn(isbn);
+            this.model.setQuantity(book, quantity);
         }
         this.showUpdateBookScreen();
     }

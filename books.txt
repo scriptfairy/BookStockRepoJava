@@ -1,5 +1,10 @@
-123ABC,book 1 title,author 1|author 2|author 3,2.00,10
-456CDA,book 2 title,author 4|author 5,10.00,50
-789KIB,book 3 title,author 6,20.50,100
-
-
+158587654,The Walking Dead Volume 1,Robert Kirkman|Tony Moore,21.7,0
+0552137030,Good Omens,Neil Gaiman|Terry Pratchett,10.3,30
+1904233910,Eclipse,Stephenie Meyer,9.0,120
+978-0971977556,30 Days Of Night,Steve Niles,13.0,18
+0316015849,Twilight,Stephenie Meyer,13.9,25
+0708860737,Interview With the Vampire,Anne Rice,15.15,100
+4444-8888,Dead Until Dark,Charlaine Harris,4.65,70
+0312360266,Marked,P.C. Cast|Kristin Cast,12.0,30
+0735219346,Dracul,Dacre Stoker|J. D. Barker,7.0,45
+0450031063,Salem's Lot,Stephen King,13.99,10

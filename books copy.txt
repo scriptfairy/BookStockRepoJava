@@ -1,0 +1,11 @@
+978-0971977556,30 Days Of Night,Steve Niles,13.0,18
+0552137030,Good Omens,Neil Gaiman|Terry Pratchett,10.3,30
+0708860737,Interview With the Vampire,Anne Rice,15.15,100
+1904233910,Eclipse,Stephenie Meyer,9.0,120
+0450031063,Salem's Lot,Stephen King,13.99,10
+0735219346,Dracul,Dacre Stoker|J. D. Barker,7.0,45
+0441008534,Dead Until Dark,Charlaine Harris,10.76,20
+0316015849,Twilight,Stephenie Meyer,13.90,25
+0312360266,Marked,P.C. Cast|Kristin Cast,12.00,30
+1582406723,The Walking Dead Volume 1,Robert Kirkman|Tony Moore,21.7,5
+

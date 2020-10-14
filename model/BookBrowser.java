@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Class to be used while browsing inventory books or to hold search result
+ */
 public class BookBrowser {
     private ArrayList<Book> books;
     private BookInventory inventory;
@@ -11,6 +14,11 @@ public class BookBrowser {
         this.books = books;
         this.inventory = inventory;
 
+    }
+
+    public void deleteBook(Book book) {
+        this.books.remove(book);
+        prev();
     }
 
     public int getSize() {

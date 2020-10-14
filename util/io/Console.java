@@ -2,6 +2,10 @@ package util.io;
 
 import java.util.Scanner;
 
+/**
+ * Console is singleton. Use only one instance of the Scanner attached to
+ * System.in, If we try to use multiple scanners we get error message.
+ */
 public class Console {
 
     private static Scanner scanner;

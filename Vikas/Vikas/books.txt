@@ -1,5 +1,0 @@
-ISBN_Twilight|Twilight|Stephanie Meyer|20.0|100
-ISBN_NewMoon|New Moon|Stephanie Meyer,Stephanie Meyer1|20.0|100
-ISBN_Eclipse|Eclipse|Stephanie Meyer|20.0|100
-ISBN_BreakingDown|Breaking Down|Stephanie Meyer|20.0|100
-ISBN_BreakingDown|Breaking Down|Stephanie Meyer|20.0|100

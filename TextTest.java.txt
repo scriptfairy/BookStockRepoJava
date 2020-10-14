@@ -1,9 +1,0 @@
-public class TextTest {
-   public static void main(String[] args) {
-       TextInput searchInput = new TextInput("Enter ISBN, Title or Author.\nEnter X to return to main menu.");
-
-       String query = searchInput.prompt();
-       System.out.println("you have entered " + query);
-
-   } 
-}

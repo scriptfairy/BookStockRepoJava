@@ -9,6 +9,7 @@ public class BrowseBooksScreen {
     public static char COMMAND_NEXT = 'N';
     public static char COMMAND_UPDATE = 'U';
     public static char COMMAND_PREV = 'P';
+    public static char COMMAND_DEL = 'D';
 
     private static void showNoBooksHeading() {
         Common.showHeading("No books found");
@@ -34,7 +35,9 @@ public class BrowseBooksScreen {
 
         if (browser.getSize() > 0) {
             menu.add(new MenuItem(BrowseBooksScreen.COMMAND_UPDATE, "Update"));
+            menu.add(new MenuItem(BrowseBooksScreen.COMMAND_DEL, "Delete"));
         }
+
         menu.add(new MenuItem(BrowseBooksScreen.COMMAND_RETURN, "Return"));
 
         return menu.prompt();

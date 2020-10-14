@@ -2,17 +2,15 @@ package ui.form;
 
 import model.Book;
 
-import java.util.ArrayList;
-
 public class AddBookForm {
 
     private String isbn;
     private String title;
-    private ArrayList<String> authors;
+    private String authors;
     private double price;
     private int quantity;
 
-    public AddBookForm(String isbn, String title, ArrayList<String> authors, double price, int quantity) {
+    public AddBookForm(String isbn, String title, String authors, double price, int quantity) {
         this.isbn = isbn;
         this.title = title;
         this.authors = authors;
@@ -29,7 +27,7 @@ public class AddBookForm {
         return title;
     }
 
-    public ArrayList<String> getAuthors() {
+    public String getAuthors() {
         return authors;
     }
 
