@@ -84,6 +84,7 @@ public class BookStorage {
 
     } catch (FileNotFoundException e) {
       System.out.println("The file " + this.fileName + " was not found.");
+      System.exit(0);
     }
     System.out.println();
     System.out.println("Reading inventory file is done.");
